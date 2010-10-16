@@ -3,7 +3,7 @@ package main
 type Metric struct {
 	Name string // metric name in dotted form
 	Timestamp uint64 // timestamp of collection in ms
-	Samples []Sample 
+	Samples []Sample // slice of samples relative to this Metrics' timestamp
 }
 
 type SampleType int 
@@ -20,3 +20,5 @@ type Sample struct {
 	Type SampleType // see above
 	Value uint64
 }
+
+type MetricChannel chan Metric
